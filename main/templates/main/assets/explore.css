@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.site-btn{
+    display: inline-block;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 167px;
+    padding: 14px 30px;
+    border-radius: 50px;
+    color: white;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #f76666, #ffffff);
+}
+.site-btn.sb-gradient:hover{
+    color: #000000;
+}
+#topbar{
+    background-color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid  #000;
+    font-size: 15px;
+}
+#topbar .contact-info a{
+     line-height: 1;
+     color: rgb(247, 102, 102);
+     transition: 0.3s;
+}
+#topbar .contact-info a:hover{
+    color: #000000;
+}
+#topbar .contact-info i{
+    color: #f76666;
+    padding: 4px;
+}
+#topbar .social-links a{
+    color: #f76666;
+    padding: 4px 12px;
+    display: inline-block;
+    line-height: 1;
+    transition: 0.3s;
+    border-left: 1px solid #272838; 
+}
+#topbar .social-links a:hover{
+    color: #000000;
+}
+#topbar .social-links a:first-child{
+    border-left: 0;
+}
+.bg-color{
+    background: #ffffff;
+}
+.nav-item a:hover{
+    color: #000000;
+    font-weight: bold;
+}
+.nav-link{
+    color: red;
+}
+.slide-1, .slide-2, .slide-3{
+    min-height: 80vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 82%);
+}
+.slide-1{
+    background:  url(https://wallpaperaccess.com/full/2246864.jpg) center /cover fixed no-repeat, linear-gradient(to right, rgba(203, 192, 211, 1), rgba(222, 226, 255, 1));
+}
+.slide-2{
+    background:  url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdTNVxYhse2RRTwEnJl4cJZVUI8L7GNpry1pPITcPlnn_Q0IN2FuQLV49oV5zxECVpzA0&usqp=CAU) center /cover fixed no-repeat, linear-gradient(to right, rgba(254, 234, 250, 1), rgba(222, 226, 255, 1));
+}
+.slide-3{
+    background:  url(https://cdn.wallpapersafari.com/6/15/l1nvdr.jpg) center /cover fixed no-repeat, linear-gradient(to right, rgba(203, 192, 211, 1), rgba(254, 234, 250, 1));
+}
+#cards
+{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 60px;
+}
+
+
+
+
+
+
+.contact .info{
+    width:100%;
+}
+.contact .info i{
+    font-size: 20px;
+    float: left;
+    width:44px;
+    height:44px;
+    background: #f76666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+.contact .info h4{
+    padding: 0 0 0 60px;
+    font-size:18px;
+    font-weight: 500;
+    margin-bottom:5px;
+}
+.contact .info p{
+    padding: 0 0 0 60px;
+    margin-bottom:0;
+    font-size: 14px;
+    color:#000;
+}
+.contact .info .open-hours,
+.contact .info .email,
+.contact .info .phone{
+    margin-top: 40px;
+}
+.contact button{
+    background: #f76666;
+    border: 2px solid #000;
+    padding:10px 35px;
+    color:#000;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+.contact button:hover{
+    background: #fff;
+    border: 2px solid #000;
+}
+
+.sub-footer{
+    margin-top: 30px;
+     background: #f76666;
+     border-top: 1px solid #000;
+     padding: 30px 0 10px;
+}
+footer .sub-footer p{
+    font-size: 14px;
+}
