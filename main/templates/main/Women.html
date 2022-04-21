@@ -65,12 +65,12 @@
     </nav>
     <hr noshade size=20>
     {% load static %}
-    <div style="background-image: url({% static 'women.jpg' %})" width="100%" height="100%" class=" img-fluid position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div style="background-image: url('{% static 'women.jpg' %}');" width="100%" height="100%" class=" img-fluid position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
         <div  class="col-md-5 p-lg-5 mx-auto my-5">
             <h1 class="text-white">SHOP</h1>
-            <a href="Sneakers.html" class="lead text-white" style="text-decoration: none;"> Men </a>
-            <a href="Women.html" class="lead text-white" style="text-decoration: none;">/ Women </a>
-            <a href="Kids.html" class="lead text-white" style="text-decoration: none;"> / kids </a>
+            <a href="{% url 'sneakers' %}" class="lead text-white" style="text-decoration: none;"> Men </a>
+            <a href="{% url 'women' %}" class="lead text-white" style="text-decoration: none;">/ Women </a>
+            <a href="{% url 'kids' %}" class="lead text-white" style="text-decoration: none;"> / kids </a>
         </div>
     </div>
     <div style="margin-left: 20px;" class="container-fluid">
@@ -142,7 +142,7 @@
                         </svg>&nbsp;M</a>
     
                     <br><br>
-                    <h5 style="font-weight: bold;" class="">COLOR OPTIONS</h5>
+                    <!-- <h5 style="font-weight: bold;" class="">COLOR OPTIONS</h5>
     
                     <a style="color: #2349d5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
@@ -167,10 +167,10 @@
                     <a style="color: #eeee22">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
                             <circle cx="8" cy="8" r="8"></circle>
-                        </svg>&nbsp;</a>
+                        </svg>&nbsp;</a> -->
     
-                    <br><br>
-                    <h5 style="font-weight: bold;" class="">TOP RATED</h5>
+                    <!-- <br><br> -->
+                    <!-- <h5 style="font-weight: bold;" class="">TOP RATED</h5>
     
                     <div class="col">
                         <div class="card shadow-sm">
@@ -200,7 +200,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <br>
                 </div>
             </nav>
@@ -209,11 +209,27 @@
     
                 <div class="album py-5 " id="cards">
                     <div class="container">
+
+                        
     
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                             <div class="col">
                                 <div class="card shadow-sm">
-                                    <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d77a2014-d6c7-42c8-a513-e806229cce4b/zoomx-invincible-run-flyknit-running-shoe-q0QV0R.png" >
+
+                                    <div class="d-flex justify-content-between">
+                                        {% for item in all %}
+                                            {% if item.sneaker_for == "women" %}
+                                                <div class="mr-4 ml-4">
+                                                <img src="{{ item.sneaker_image.url }}" alt="" style="height: 300px; width: 300px; object-fit: cover; object-position: 0% 100%;">
+                                                <br>
+                                                {{ item.sneaker_name }} {{ item.sneaker_model }}
+                                                <p>&dollar;{{ item.sneaker_price }}</p>
+                                                <br>
+                                                </div>                                                                                                                                                                               
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <!-- <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d77a2014-d6c7-42c8-a513-e806229cce4b/zoomx-invincible-run-flyknit-running-shoe-q0QV0R.png" >
                                     <div class="card-body">
                                         <b class="card-text">Nike ZoomX Vaporfly</b>
                                         <p class="card-text">$330.00</p>
@@ -223,10 +239,10 @@
                                             </div>
                                             <small class="text-muted">WOMEN'S</small>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
-                            <div class="col">
+                            <!-- <div class="col">
                                 <div class="card shadow-sm">
                                     <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ef467c0f-95f0-48d4-a03f-0d84274acf60/air-zoom-vomero-15-running-shoe-nXFwTV.png" >
                                     <div class="card-body">
@@ -257,10 +273,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                        </div>
     
-                <div class="album py-5 " id="cards">
+                <!-- <div class="album py-5 " id="cards">
                     <div class="container">
     
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -311,8 +327,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="album py-5 " id="cards">
+                </div> -->
+                <!-- <div class="album py-5 " id="cards">
                     <div class="container">
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                             <div class="col">
@@ -360,7 +376,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </main>
