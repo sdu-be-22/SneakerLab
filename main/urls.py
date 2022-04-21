@@ -12,5 +12,9 @@ urlpatterns = [
     path('rate', views.rate, name='rate'),
     path('sneakers', views.sneakers, name='sneakers'),
     path('women', views.women, name='women'),
+    path('collabformen', views.collabformen, name='collabformen'),
+    path('collabforwomen', views.collabforwomen, name='collabforwomen'),
+    path('collabforkid', views.collabforkid, name='collabforkid'),
+    path('searchsneakerformen', views.searchsneakerformen, name='searchsneakerformen'),
     # path('register', views.register, name='register'),
 ]
