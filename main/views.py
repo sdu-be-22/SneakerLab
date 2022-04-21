@@ -1,7 +1,8 @@
 from email import message
 from django.shortcuts import render
 from django.contrib import messages
-from .models import Contact
+from .models import Contact, SneakerForKid, SneakerForMan, SneakerForWoman
+# from .forms import ProductCategoriesForm
 
 
 # Create your views here.
@@ -33,9 +34,6 @@ def explore(request):
     return render(request, 'main/explore.html')
 
 
-def kids(request):
-    return render(request, 'main/Kids.html')
-
 
 def nba(request):
     return render(request, 'main/NBA.html')
@@ -50,13 +48,45 @@ def rate(request):
 
 
 def sneakers(request):
-    return render(request, 'main/Sneakers.html')
+    all_sneakers = SneakerForMan.objects.all
+    return render(request, 'main/Sneakers.html', {'all':all_sneakers})
 
 
 def women(request):
-    return render(request, 'main/Women.html')
+    all_sneakers = SneakerForWoman.objects.all
+    return render(request, 'main/Women.html', {'all':all_sneakers})
 
 
+def kids(request):
+    all_sneakers = SneakerForKid.objects.all
+    return render(request, 'main/Kids.html', {'all':all_sneakers})
+
+def collabformen(request):
+    all_sneakers = SneakerForMan.objects.all
+    return render(request, 'main/collabformen.html', {'all':all_sneakers})
+
+
+def collabforwomen(request):
+    all_sneakers = SneakerForWoman.objects.all
+    return render(request, 'main/collabformen.html', {'all':all_sneakers})
+
+
+def collabforkid(request):
+    all_sneakers = SneakerForKid.objects.all
+    return render(request, 'main/collabformen.html', {'all':all_sneakers})
+
+
+def searchsneakerformen(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        sneakers = SneakerForMan.objects.filter(sneaker_model__contains=searched)
+        return render(request, 'main/search.html', {'searched':searched , 'sneakers':sneakers})
+
+    else:
+        return render(request, 'main/search.html', {})
+
+# def productcategory(request):
+#     form = ProductCategoriesForm()
 # def register(request):
 #     return render(request, 'register/register.html')
 
