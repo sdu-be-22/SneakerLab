@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/sneakers.css' %}">
+    <script src="https://kit.fontawesome.com/923acb3a15.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title>Man sneakers</title>
+    <script text="text/javascript">
+        var user = '{{request.user}}'
+
+        function getToken(name){
+            var cookieValue = null;
+            if(document.cookie && document.cookie !== ''){
+                var cookies = document.cookie.split(';');
+                for(var i=0; i<cookies.length; i++){
+                    var cookie = cookies[i].trim();
+                    //Does this cookie string begin with the name we want?
+                    if(cookie.substring(0,name.length+1) === (name + '=')){
+                        cookieValue = decodeURIComponent(cookie.substring(name.length+1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken');
+    </script>
+</head>
+<body>
+    <section id="topbar" class="d-none d-lg-block">
+        <div class="container d-flex">
+            <div class="contact-info mr-auto">
+                <i class="fas fa-envelope"></i>
+                <a href="">SneakerShop</a>
+                
+            </div>
+            <div class="social-links">
+                <a href="https://twitter.com/NBA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/nba/" class="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/nba/" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar navbar-expand-lg bg-color" id="myNavbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand">
+                {% load static %}
+                <img src="{% static 'images/heat.png' %}" alt="" style="height: 60px;width: 181px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>Menu
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'sneakers' %}">Sneakers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                  </li>
+                </ul>
+                
+                <div class="form-inline my-2 my-lg-0">
+                    <a href="#"class="btn btn-secondary">Login</a>
+                            
+                    <a href="{% url 'cart' %}">
+                        <img  id="cart-icon" src="{% static 'images/cart.png' %}">
+                    </a>
+                    <p id="cart-total">{{ cartItems }}</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <hr noshade size=20>
+    <div style="background-image: url('{% static 'man.jpg' %}');" width="100%" height="100%" class=" img-fluid position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div  class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="text-white">SHOP</h1>
+        </div>
+    </div>
+
+     
+
+    <div style="margin-left: 20px; margin-top: 50px;" class="container-fluid">
+        <div class="row" id = "recommd">
+            <nav id="sidebarMenu" class="col-lg-2 d-md-block bg-light  ">
+                <div class="position-sticky pt-5">
+                    {% if searched %}
+                        <p>You searched for {{ searched }}</p>
+                    {% else %}
+                        <p>You forgot to search...</p>
+                    {% endif %}
+                    <form class="form-group" method="POST" action="{% url 'search' %}">
+                        {% csrf_token %}
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="searched">
+                        <button class="btn btn-outline mt-2" type="submit">Search</button>
+                      </form>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">    
+                <div class="album py-5 " id="cards">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            {% for product in sneakers %}
+                            <div class="col-lg-4 mb-4" id="first-card">
+                                <div class="card shadow-sm">
+                                    <img class="ml-4" src="{{ product.image.url }}" style="height: 280px; width: 280px; object-fit: cover; object-position: 0% 100%;">
+                                    <div class="card-body">
+                                        <a class="card-text" href="">{{ product.name }} {{ product.model }}</a>
+                                        <hr>
+                                        <button data-product={{product.id}} data-action="add" type="button" class="btn btn-sm btn-outline-secondary add-btn update-cart">Add to Card</button>
+                                        <a class="btn btn-sm btn-outline-success" href="">View</a>
+                                        <p class="card-text" style="display: inline-block; float: right ">${{ product.price|floatformat:2 }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <br>
+                        
+                        <div class=" d-flex justify-content-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    {% if sneakers.has_previous %}
+        
+                                        <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                                        <li class="page-item"><a class="page-link" href="?page={{ sneakers.previous_page_number }}">Previous</a></li>
+        
+                                    {% endif %}
+        
+                                    <li class="page-item disabled"><a href="#" class="page-link">Page {{ sneakers.number }} of {{ sneakers.paginator.num_pages }}</a></li>
+        
+                                    {% if sneakers.has_next %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ sneakers.next_page_number }}">Next</a></li>
+        
+                                        <li class="page-item"><a class="page-link" href="?page={{ sneakers.paginator.num_pages }}">Last &raquo;</a></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+    
+                
+            </main>
+        </div>
+    </div>
+    <hr noshade size=20>
+    <footer>
+        <section class="contact mt-5">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-lg-4">
+                        <div class="info">
+                            <div class="address">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h5>Location:</h5>
+                                <p>Abylai Khan Avenue 1/1, Kaskelen 050010</p>
+                            </div>
+                            <div class="open-hours">
+                                <i class="far fa-clock"></i>
+                                <h5>Open Hours:</h5>
+                                <p>Monday-Saturday<br> 8AM–8:30PM
+                                </p>
+                            </div>
+                            <div class="email">
+                                <i class="fas fa-envelope-open-text"></i>
+                                <h5>Email:</h5>
+                                <p>basketball.trainer@gmail.com</p>
+                            </div>
+                            <div class="phone">
+                                <i class="fas fa-phone"></i>
+                                <h5>Call:</h5>
+                                <p> 8 (777) 777 7777</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 mt-5 mt-lg-0">
+                        <p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3058.9150068161193!2d76.66674431252055!3d43.20627075992801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38834f7675d8a6c3%3A0x7b7d14aec270c056!2z0KPQvdC40LLQtdGA0YHQuNGC0LXRgiDQodGD0LvQtdC50LzQsNC9INCU0LXQvNC40YDQtdC70Y8!5e0!3m2!1sru!2skz!4v1650741097988!5m2!1sru!2skz" 
+                            width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 ">
+                        <div>
+                            <div class="text-center">
+                                <p>&copy; Copyright - BasketballTrainer. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+</body>
+</html>

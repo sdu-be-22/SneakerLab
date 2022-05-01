@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>Basketball Training</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <script src="https://kit.fontawesome.com/923acb3a15.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <script text="text/javascript">
+        var user = '{{request.user}}'
+
+        function getToken(name){
+            var cookieValue = null;
+            if(document.cookie && document.cookie !== ''){
+                var cookies = document.cookie.split(';');
+                for(var i=0; i<cookies.length; i++){
+                    var cookie = cookies[i].trim();
+                    //Does this cookie string begin with the name we want?
+                    if(cookie.substring(0,name.length+1) === (name + '=')){
+                        cookieValue = decodeURIComponent(cookie.substring(name.length+1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken');
+    </script>
+</head>
+<body>
+    <section id="topbar" class="d-none d-lg-block">
+        <div class="container d-flex">
+            <div class="contact-info mr-auto">
+                <i class="fas fa-envelope"></i>
+                <a href="">SneakerLab</a>                
+            </div>
+            <div class="social-links">
+                <a href="https://twitter.com/NBA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/nba/" class="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/nba/" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar navbar-expand-lg bg-color" id="myNavbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand">
+                <img src="{% static 'images/heat.png' %}" alt="" style="height: 60px;width: 181px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'sneakers' %}">Sneakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>  
+        <hr noshade size="20">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show w-25 mx-auto" role="alert">
+                    {{  message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="false">&times;</span></button>
+                </div>
+            {% endfor %}            
+        {% endif %}
+        
+        
+        
+        <main>
+        <h2 class="h2">CONTACT US</h2>
+        <form class="form" method="post">
+            {% csrf_token %}
+            <p><input type="text" name="name" class="feedback-input" placeholder="Name" id="name"></p>
+            <p><input type="email" name="email" class="feedback-input" placeholder="Email" id="email"></p>
+            <p><textarea name="subject" id="comment" placeholder="Message" class="feedback-input"></textarea></p>
+            <input type="submit" value="Submit" class="button-submit">
+            <div class="ease"></div>
+        </form>
+        </main>  
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        
+    
+        <hr noshade size="20">
+        <footer>
+            <section class="contact mt-5">
+                <div class="container">
+                    <div class="row mt-5">
+                        <div class="col-lg-4">
+                            <div class="info">
+                                <div class="address">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h4>Location:</h4>
+                                    <p>Abylai Khan Avenue 1/1, Kaskelen 050010</p>
+                                </div>
+                                <div class="open-hours">
+                                    <i class="far fa-clock"></i>
+                                    <h4>Open Hours:</h4>
+                                    <p>Monday-Saturday<br> 8AM–8:30PM
+                                    </p>
+                                </div>
+                                <div class="email">
+                                    <i class="fas fa-envelope-open-text"></i>
+                                    <h4>Email:</h4>
+                                    <p>basketball.trainer@gmail.com</p>
+                                </div>
+                                <div class="phone">
+                                    <i class="fas fa-phone"></i>
+                                    <h4>Call:</h4>
+                                    <p> 8 (777) 777 7777</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="sub-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-4 ">
+                            <div>
+                                <div class="text-center">
+                                    <p>&copy; Copyright - BasketballTrainer. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+</body>
+</html>
