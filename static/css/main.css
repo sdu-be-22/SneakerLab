@@ -433,9 +433,6 @@ footer .sub-footer p{
 	margin-top: 10px;
 }
 
-.btn{
-	border-radius: 0;
-}
 
 .row-image{
 	width: 100px;
@@ -480,3 +477,27 @@ footer .sub-footer p{
 .hidden{
 	display: none!important;
 }
+
+.button {
+    background-color: #f76666;
+    border: none;
+    color: #f76666;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0px 3px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btn{
+    font-weight: 700;
+    background: #f76666;
+    color: #f76666;
+    padding: 0 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    }
