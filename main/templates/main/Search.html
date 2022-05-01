@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/sneakers.css' %}">
     <script src="https://kit.fontawesome.com/923acb3a15.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <title>Man sneakers</title>
+    <title>Store</title>
     <script text="text/javascript">
         var user = '{{request.user}}'
 
@@ -93,15 +93,33 @@
             <nav id="sidebarMenu" class="col-lg-2 d-md-block bg-light  ">
                 <div class="position-sticky pt-5">
                     {% if searched %}
-                        <p>You searched for {{ searched }}</p>
+                        <p>You searched for:</p>
+                        <h6 class="pt-0" style="color: #f76666; text-transform:uppercase;">{{ searched }}</h6>
                     {% else %}
                         <p>You forgot to search...</p>
                     {% endif %}
-                    <form class="form-group" method="POST" action="{% url 'search' %}">
+                    <form class="form-group" method="POST" action="{% url 'searchbybrand' %}">
+                        <h6>Search by Brand</h6>
                         {% csrf_token %}
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="searched">
                         <button class="btn btn-outline mt-2" type="submit">Search</button>
-                      </form>
+                    </form>
+                </div>
+                <div class="position-sticky pt-3">
+                    <form class="form-group" method="POST" action="{% url 'searchbymodel' %}">
+                        <h6>Search by Models</h6>
+                        {% csrf_token %}
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="searched">
+                        <button class="btn btn-outline mt-2" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="position-sticky pt-3">
+                    <form class="form-group" method="POST" action="{% url 'searchbycategory' %}">
+                        <h6>Search by Category</h6>
+                        {% csrf_token %}
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="searched">
+                        <button class="btn btn-outline mt-2" type="submit">Search</button>
+                    </form>
                 </div>
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">    
@@ -113,11 +131,12 @@
                                 <div class="card shadow-sm">
                                     <img class="ml-4" src="{{ product.image.url }}" style="height: 280px; width: 280px; object-fit: cover; object-position: 0% 100%;">
                                     <div class="card-body">
-                                        <a class="card-text" href="">{{ product.name }} {{ product.model }}</a>
+                                        <a class="card-text">{{ product.name }} {{ product.model }}</a>
+                                        <hr>
+                                        <h6 style="color:rgba(0,0,0, 0.5);">Category: {{ product.category }}</h6>
                                         <hr>
                                         <button data-product={{product.id}} data-action="add" type="button" class="btn btn-sm btn-outline-secondary add-btn update-cart">Add to Card</button>
-                                        <a class="btn btn-sm btn-outline-success" href="">View</a>
-                                        <p class="card-text" style="display: inline-block; float: right ">${{ product.price|floatformat:2 }}</p>
+                                        <p class="card-text" style="display: inline-block; float: right;">${{ product.price|floatformat:2 }}</p>
                                     </div>
                                 </div>
                             </div>

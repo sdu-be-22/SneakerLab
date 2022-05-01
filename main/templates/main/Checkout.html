@@ -2,7 +2,7 @@
 <html lang="en">
 {% load static %}
 <head>
-    <title>Basketball Training</title>
+    <title>Checkout</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -68,7 +68,7 @@
                 </ul>
 
                 <div class="form-inline my-2 my-lg-0">
-                    <a href="#"class="btn btn-warning">Login</a>
+                    <a href="#"class="btn btn-secondary">Login</a>
                             
                     <a href="{% url 'cart' %}">
                         <img  id="cart-icon" src="{% static 'images/cart.png' %}">
@@ -129,7 +129,6 @@
                     <hr>
                     {% for item in items %}
                     <div class="cart-row">
-                        <!-- <div style="flex:2"><img class="row-image" src="{{ item.product.imageURL }}"></div> -->
                         <div style="flex:2"><p>{{ item.product.name }} {{ item.product.model }}</p></div>
                         <div style="flex:1"><p>${{ item.product.price }}</p></div>
                         <div style="flex:1"><p>{{ item.quantity }}</p></div>

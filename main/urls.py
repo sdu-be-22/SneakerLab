@@ -9,5 +9,7 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('update_item/', views.updateItem, name='update_item'),
     path('process_order/', views.processOrder, name='process_order'),
-    path('search/', views.search, name='search'),
+    path('searchbymodel/', views.searchbymodel, name='searchbymodel'),
+    path('searchbybrand/', views.searchbybrand, name='searchbybrand'),
+    path('searchbycategory/', views.searchbycategory, name='searchbycategory'),
 ]

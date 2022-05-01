@@ -138,7 +138,7 @@ def processOrder(request):
     return JsonResponse('Payment complete', safe=False)
 
 
-def search(request):
+def searchbymodel(request):
     products = Product.objects.all()
 
     if request.user.is_authenticated:
@@ -154,6 +154,60 @@ def search(request):
     if request.method == "POST":
         searched = request.POST['searched']
         sneakers = Product.objects.filter(model__contains=searched)
+
+        p = Paginator(Product.objects.all(), 6)
+        page = request.GET.get('page')
+        sneakerss = p.get_page(page)
+        return render(request, 'main/search.html', {'products':products, 'cartItems':cartItems,'searched':searched , 'sneakers':sneakers, 'sneakerss':sneakerss})
+
+    else:
+        return render(request, 'main/search.html', {'products':products, 'cartItems':cartItems,'searched':searched , 'sneakers':sneakers, 'sneakerss':sneakerss})
+
+
+
+def searchbybrand(request):
+    products = Product.objects.all()
+
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer = customer, complete = False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else:
+        items = []
+        order = {'get_cart_total':0, 'get_cart_items':0, 'shipping': False}
+        cartItems = order['get_cart_items']
+
+    if request.method == "POST":
+        searched = request.POST['searched']
+        sneakers = Product.objects.filter(name__contains=searched)
+
+        p = Paginator(Product.objects.all(), 6)
+        page = request.GET.get('page')
+        sneakerss = p.get_page(page)
+        return render(request, 'main/search.html', {'products':products, 'cartItems':cartItems,'searched':searched , 'sneakers':sneakers, 'sneakerss':sneakerss})
+
+    else:
+        return render(request, 'main/search.html', {'products':products, 'cartItems':cartItems,'searched':searched , 'sneakers':sneakers, 'sneakerss':sneakerss})
+
+
+
+def searchbycategory(request):
+    products = Product.objects.all()
+
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer = customer, complete = False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else:
+        items = []
+        order = {'get_cart_total':0, 'get_cart_items':0, 'shipping': False}
+        cartItems = order['get_cart_items']
+
+    if request.method == "POST":
+        searched = request.POST['searched']
+        sneakers = Product.objects.filter(category__contains=searched)
 
         p = Paginator(products, 6)
         page = request.GET.get('page')
