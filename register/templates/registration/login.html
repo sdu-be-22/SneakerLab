@@ -60,12 +60,13 @@
         <form method="POST" class="form-group" action="{% url 'register' %}">
             {% csrf_token %}
             {{ form|crispy }}
-            <button type="submit" class="btn btn-success">Register</button>
+            <p>Don't have an account? Create one <a href="/register">here</a></p>
+            <button type="submit" class="btn btn-success">Login</button>
         </form>
     </div>   
 
     <footer>
-        <div class="sub-footer">
+        <div class="sub-footer" style="margin-top: 210px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 col-md-4 ">

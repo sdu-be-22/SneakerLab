@@ -43,391 +43,395 @@
                 <a href="https://www.facebook.com/nba/" class="facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/nba/" class="instagram"><i class="fab fa-instagram"></i></a>
                 <a href="{% url 'register' %}" class="nav-link">Sign Up</a>
-                <a href="" class="nav-link">Sign In</a>
+                <a href="{% url 'login' %}" class="nav-link">Sign In</a>
             </div>
         </div>
     </section>
-    <nav class="navbar navbar-expand-lg bg-color" id="myNavbar">
-        <div class="container">
-            <a href="{% url 'home' %}" class="navbar-brand">
-                <img src="{% static 'images/heat.png' %}" alt="" style="height: 60px;width: 181px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>Menu
-            </button>
+    {% if user.is_authenticated %}
+        <nav class="navbar navbar-expand-lg bg-color" id="myNavbar">
+            <div class="container">
+                <a href="{% url 'home' %}" class="navbar-brand">
+                    <img src="{% static 'images/heat.png' %}" alt="" style="height: 60px;width: 181px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>Menu
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'sneakers' %}">Sneakers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'sneakers' %}">Sneakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                    </ul>
 
-                <div class="form-inline my-2 my-lg-0">
-                    <a href="{% url 'cart' %}">
-                        <img  id="cart-icon" src="{% static 'images/cart.png' %}">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col no-padding">
-                <div id="hero-slider" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item slide-1 active">
-                            <div class="carousel-caption mb-5 text-right">
-                                <h1 class="display-4 text-uppercase mb-2 text-bold" style="font-size: 20px; justify-content: end;">
-                                    Training At Home For Pumping Equipment
-                                </h1>
-                                <!-- <a href="p404.html" class="btn btn-lg mb-5 text-uppercase site-btn sb-gradient">Join us</a> -->
-                            </div>
-                        </div>
-                        <div class="carousel-item slide-2">
-                            <div class="carousel-caption mb-5 text-right">
-                            <h1 class="display-4 text-uppercase text-bold" style="font-size: 20px;">
-                                Come for a trial workout. You can cancel at any time online.
-                            </h1>
-                            <!-- <a href="p404.html" class="btn btn-lg mb-5 text-uppercase site-btn sb-gradient">Your start to be pro</a> -->
-                            </div>
-                        </div>
-                        <div class="carousel-item slide-3">
-                            <div class="carousel-caption mb-5 text-right">
-                            <h1 class="display-4 text-uppercase mb-2 text-bold" style="font-size: 20px;">
-                                Your practice!
-                            </h1>
-                            <!-- <a href="p404.html" class="btn btn-lg mb-5 text-uppercase site-btn sb-gradient">Join the movement!</a> -->
-                            </div>
-                        </div>
-                        </div>
-                        <a href="#hero-slider" class="carousel-control-prev" role="button" data-slide="prev">
-                        <i class="fas fa-arrow-circle-left"> </i>
+                    <div class="form-inline my-2 my-lg-0">
+                        <a href="{% url 'cart' %}">
+                            <img  id="cart-icon" src="{% static 'images/cart.png' %}">
                         </a>
-                                <a href="#hero-slider" class="carousel-control-next" role="button" data-slide="next">
-                                    <i class="fas fa-arrow-circle-right"> </i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <section class="about-section">
-                    <div class="container">
-                        <div class="section-title text-center">
-                            <h2>Welcome to Basketball</h2>
-                            <p>
-                                Connect and train with 300+ expert trainers of basketball.
-                            </p>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="about-img">
-                                    <img src="https://images.unsplash.com/photo-1587166088004-bbd20854280f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="img-fluid" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="about-item">
-                                    <div class="about-icon">
-                                        <i class="fab fa-diaspora fa-2x"></i>
-                                    </div>
-                                    <div class="about-text">
-                                        <h4>Welcome to Basketball</h4>
-                                        <p>
-                                            Regular basketball practice strengthens the cardiovascular and respiratory systems, significantly improves the work of the endocrine glands.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="about-item">
-                                    <div class="about-icon">
-                                        <i class="fab fa-diaspora fa-2x"></i>
-                                    </div>
-                                    <div class="about-text">
-                                        <h4>How to play Basketball?</h4>
-                                        <p>
-                                            Give it a try and It will make you more resilient and stronger.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="about-item">
-                                    <div class="about-icon">
-                                        <i class="fab fa-diaspora fa-2x"></i>
-                                    </div>
-                                    <div class="about-text">
-                                        <h4>I can't jump</h4>
-                                        <p>
-                                            Listen to your body, don't force yourself and stay within your limits.
-                                        </p>
-                                    </div>
-                                </div>
-                                <a href="explore.html" class="site-btn sb-gradient mt-3" style="text-decoration: none">Explore More</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr>
-    <section class="services section-bg pt-5">
-      <div class="container">
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>
-           This is your personal online trainer at home or on the go. With B.Trainer you can practice basketball - whenever and wherever you want.
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <h4 class="title">
-                <a href="p404.html">Dribbling</a>
-                                </h4>
-                                <p class="description">
-                                    On wellbeing, anatomy, philosophy and more
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="icon-box">
-                                <h4 class="title">
-                                    <a href="p404.html">Workout</a>
-                                </h4>
-                                <p class="description">
-                                    Inspiration for your practice or teaching
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="icon-box">
-                                <h4 class="title">
-                                    <a href="p404.html">Shooting</a>
-                                </h4>
-                                <p class="description">
-                                    Tips on how to make poses work for you
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="icon-box">
-                                <h4 class="title">
-                                    <a href="p404.html">Before game</a>
-                                </h4>
-                                <p class="description">
-                                    Quick guides to all our yoga styles yoag
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="icon-box">
-                                <h4 class="title">
-                                    <a href="p404.html">Finishes</a>
-                                </h4>
-                                <p class="description">
-                                    Step-by-step guides to yin yoga poses
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="icon-box">
-                                <h4 class="title">
-                                    <a href="Sneakers.html">Sneakers</a>
-                                </h4>
-                                <p class="description">
-                                    To get the best feeling from training and games, you have to get the best sneakers
-                                </p>
-                            </div>
-                        </div>
-                </section>
-                <hr>
-                <section class="pricing-section pt-5">
-                    <div class="container">
-                        <div class="section-title text-center">
-                            <h2>Price</h2>
-                            <p>Do not economy on yourself!</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="price-item beginner">
-                                    <div class="price-top">
-                                        <h4>Play</h4>
-                                    </div>
-                                    <div class="price-sec">
-                                        <h3>30$</h3>
-                                        <p>Per month</p>
-                                    </div>
-                                    <ul>
-                                        <li> <span>What you need:</span> Change of clothes, basketball jersey.</li>
-                                        <li> <span>What you can use:</span> Court,Gym,Video practice</li>
-                                        <li> <span>About plan:</span> This plan is for those people who wants to just play basketball once or twice a week.</li>
-                                    </ul>
-                                    <a href="p404.html" class="site-btn sb-gradient">Get started</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="price-item intermediate">
-                                    <div class="price-top">
-                                        <h4>Rookie</h4>
-                                    </div>
-                                    <div class="price-sec">
-                                        <h3>50$</h3>
-                                        <p>Per month</p>
-                                    </div>
-                                    <ul>
-                                        <li> <span>What you need:</span> Change of clothes, the desire to become better.</li>
-                                        <li> <span>What you can use:</span> Court,Gym,Video practice, offline practice with trainer(2 times a week).</li>
-                                        <li> <span>About plan:</span> This plan is for those who wants to started play basketball and want to be stronger in it.</li>
-                                    </ul>
-                                    <a href="p404.html" class="site-btn sb-gradient">Get started</a>
+            </div>
+        </nav>
 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col no-padding">
+                    <div id="hero-slider" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item slide-1 active">
+                                <div class="carousel-caption mb-5 text-right">
+                                    <h1 class="display-4 text-uppercase mb-2 text-bold" style="font-size: 20px; justify-content: end;">
+                                        Training At Home For Pumping Equipment
+                                    </h1>
+                                    <!-- <a href="p404.html" class="btn btn-lg mb-5 text-uppercase site-btn sb-gradient">Join us</a> -->
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="price-item advanced">
-                                    <div class="price-top">
-                                        <h4>Hooper</h4>
-                                    </div>
-                                    <div class="price-sec">
-                                        <h3>80$</h3>
-                                        <p>Per month</p>
-                                    </div>
-                                    <ul>
-                                        <li> <span>What you need:</span> Change of clothes, the desire to become better.</li>
-                                        <li> <span>What you can use:</span> Court,Gym,Video practice, offline practice with trainer(4 times a week).</li>
-                                        <li> <span>About plan:</span> This plan is for those who wants to started play basketball and want to be stronger in it.</li>
-                                    </ul>
-                                    <a href="p404.html" class="site-btn sb-gradient">Get started</a>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="price-item pro">
-                                    <div class="price-top">
-                                        <h4>Pro</h4>
-                                    </div>
-                                    <div class="price-sec">
-                                        <h3>100$</h3>
-                                        <p>Per month</p>
-                                    </div>
-                                    <ul>
-                                        <li> <span>What you need:</span> The desire to be the best.</li>
-                                        <li> <span>What you can use:</span> Court,Gym,Video practice, offline practice with trainer(6 times a week).</li>
-                                        <li> <span>About plan:</span> In this plan you will enter the basketball team and you'll play with universities,other teams. You will play in tournaments and one time you will be picked in NBA</li>
-                                    </ul>
-                                    <a href="p404.html" class="site-btn sb-gradient">Get started</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="gallery">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col text-center pt-5">
-                                <h1 class="text-dark text-uppercase">
-                                    Our Gallery
+                            <div class="carousel-item slide-2">
+                                <div class="carousel-caption mb-5 text-right">
+                                <h1 class="display-4 text-uppercase text-bold" style="font-size: 20px;">
+                                    Come for a trial workout. You can cancel at any time online.
                                 </h1>
+                                <!-- <a href="p404.html" class="btn btn-lg mb-5 text-uppercase site-btn sb-gradient">Your start to be pro</a> -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-4 first-row align-items-end">
-                            <div class="col-lg-3">
-                                <a href="https://images.pexels.com/photos/258004/pexels-photo-258004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" data-lightbox="basketball" data-title="image-title">
-                                    <img src="https://images.pexels.com/photos/258004/pexels-photo-258004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-thumbnail gallery"></a>
+                            <div class="carousel-item slide-3">
+                                <div class="carousel-caption mb-5 text-right">
+                                <h1 class="display-4 text-uppercase mb-2 text-bold" style="font-size: 20px;">
+                                    Your practice!
+                                </h1>
+                                <!-- <a href="p404.html" class="btn btn-lg mb-5 text-uppercase site-btn sb-gradient">Join the movement!</a> -->
+                                </div>
                             </div>
-                            <div class="col-lg-3">
-                                <a href="https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
-                                    <img src="https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery"></a>
                             </div>
-                            <div class="col-lg-3">
-                                <a href="https://images.pexels.com/photos/2304351/pexels-photo-2304351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
-                                    <img src="https://images.pexels.com/photos/2304351/pexels-photo-2304351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery"></a>
-                            </div>
-                            <div class="col-lg-3">
-                                <a href="https://images.pexels.com/photos/3764158/pexels-photo-3764158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
-                                    <img src="https://images.pexels.com/photos/3764158/pexels-photo-3764158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery"></a>
-                            </div>
-                        </div>
-                        <div class="row mb-4 second-row align-items-end">
-                            <div class="col-lg-3">
-                                <a href="https://cdn.pixabay.com/photo/2018/04/05/09/03/ball-3292243_960_720.jpg" data-lightbox="basketball" data-title="image-title">
-                                    <img src="https://cdn.pixabay.com/photo/2018/04/05/09/03/ball-3292243_960_720.jpg" class="img-thumbnail gallery" alt="">
-                                </a>
-                            </div>
-                            <div class="col-lg-3">
-                                <a href="https://cdn.pixabay.com/photo/2016/11/29/03/01/backboard-1866968_960_720.jpg" data-lightbox="basketball" data-title="image-title">
-                                    <img src="https://cdn.pixabay.com/photo/2016/11/29/03/01/backboard-1866968_960_720.jpg" class="img-thumbnail gallery" alt="">
-                                </a>
-                            </div>
-                            <div class="col-lg-3">
-                                <a href="https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
-                                    <img src="https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery" alt="">
-                                </a>
-                            </div>
-                            <div class="col-lg-3">
-                                <a href="https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
-                                    <img src="https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery" alt="">
-                                </a>
+                            <a href="#hero-slider" class="carousel-control-prev" role="button" data-slide="prev">
+                            <i class="fas fa-arrow-circle-left"> </i>
+                            </a>
+                                    <a href="#hero-slider" class="carousel-control-next" role="button" data-slide="next">
+                                        <i class="fas fa-arrow-circle-right"> </i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <hr>
-                <section class="faq section-bg pt-5" id="faq">
-                    <div class="container">
-                        <div class="section-title">
-                            <h2>F.A.Q</h2>
-                            <p>You can get answers to frequently asked questions here</p>
+                    <section class="about-section">
+                        <div class="container">
+                            <div class="section-title text-center">
+                                <h2>Welcome to Basketball</h2>
+                                <p>
+                                    Connect and train with 300+ expert trainers of basketball.
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="about-img">
+                                        <img src="https://images.unsplash.com/photo-1587166088004-bbd20854280f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="img-fluid" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="about-item">
+                                        <div class="about-icon">
+                                            <i class="fab fa-diaspora fa-2x"></i>
+                                        </div>
+                                        <div class="about-text">
+                                            <h4>Welcome to Basketball</h4>
+                                            <p>
+                                                Regular basketball practice strengthens the cardiovascular and respiratory systems, significantly improves the work of the endocrine glands.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="about-item">
+                                        <div class="about-icon">
+                                            <i class="fab fa-diaspora fa-2x"></i>
+                                        </div>
+                                        <div class="about-text">
+                                            <h4>How to play Basketball?</h4>
+                                            <p>
+                                                Give it a try and It will make you more resilient and stronger.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="about-item">
+                                        <div class="about-icon">
+                                            <i class="fab fa-diaspora fa-2x"></i>
+                                        </div>
+                                        <div class="about-text">
+                                            <h4>I can't jump</h4>
+                                            <p>
+                                                Listen to your body, don't force yourself and stay within your limits.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a href="explore.html" class="site-btn sb-gradient mt-3" style="text-decoration: none">Explore More</a>
+            </div>
+            </div>
+        </div>
+        </section>
+        <hr>
+        <section class="services section-bg pt-5">
+        <div class="container">
+            <div class="section-title">
+            <h2>Services</h2>
+            <p>
+            This is your personal online trainer at home or on the go. With B.Trainer you can practice basketball - whenever and wherever you want.
+            </p>
+            </div>
+            <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box">
+                <h4 class="title">
+                    <a href="p404.html">Dribbling</a>
+                                    </h4>
+                                    <p class="description">
+                                        On wellbeing, anatomy, philosophy and more
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="icon-box">
+                                    <h4 class="title">
+                                        <a href="p404.html">Workout</a>
+                                    </h4>
+                                    <p class="description">
+                                        Inspiration for your practice or teaching
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="icon-box">
+                                    <h4 class="title">
+                                        <a href="p404.html">Shooting</a>
+                                    </h4>
+                                    <p class="description">
+                                        Tips on how to make poses work for you
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="icon-box">
+                                    <h4 class="title">
+                                        <a href="p404.html">Before game</a>
+                                    </h4>
+                                    <p class="description">
+                                        Quick guides to all our yoga styles yoag
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="icon-box">
+                                    <h4 class="title">
+                                        <a href="p404.html">Finishes</a>
+                                    </h4>
+                                    <p class="description">
+                                        Step-by-step guides to yin yoga poses
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="icon-box">
+                                    <h4 class="title">
+                                        <a href="Sneakers.html">Sneakers</a>
+                                    </h4>
+                                    <p class="description">
+                                        To get the best feeling from training and games, you have to get the best sneakers
+                                    </p>
+                                </div>
+                            </div>
+                    </section>
+                    <hr>
+                    <section class="pricing-section pt-5">
+                        <div class="container">
+                            <div class="section-title text-center">
+                                <h2>Price</h2>
+                                <p>Do not economy on yourself!</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="price-item beginner">
+                                        <div class="price-top">
+                                            <h4>Play</h4>
+                                        </div>
+                                        <div class="price-sec">
+                                            <h3>30$</h3>
+                                            <p>Per month</p>
+                                        </div>
+                                        <ul>
+                                            <li> <span>What you need:</span> Change of clothes, basketball jersey.</li>
+                                            <li> <span>What you can use:</span> Court,Gym,Video practice</li>
+                                            <li> <span>About plan:</span> This plan is for those people who wants to just play basketball once or twice a week.</li>
+                                        </ul>
+                                        <a href="p404.html" class="site-btn sb-gradient">Get started</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="price-item intermediate">
+                                        <div class="price-top">
+                                            <h4>Rookie</h4>
+                                        </div>
+                                        <div class="price-sec">
+                                            <h3>50$</h3>
+                                            <p>Per month</p>
+                                        </div>
+                                        <ul>
+                                            <li> <span>What you need:</span> Change of clothes, the desire to become better.</li>
+                                            <li> <span>What you can use:</span> Court,Gym,Video practice, offline practice with trainer(2 times a week).</li>
+                                            <li> <span>About plan:</span> This plan is for those who wants to started play basketball and want to be stronger in it.</li>
+                                        </ul>
+                                        <a href="p404.html" class="site-btn sb-gradient">Get started</a>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="price-item advanced">
+                                        <div class="price-top">
+                                            <h4>Hooper</h4>
+                                        </div>
+                                        <div class="price-sec">
+                                            <h3>80$</h3>
+                                            <p>Per month</p>
+                                        </div>
+                                        <ul>
+                                            <li> <span>What you need:</span> Change of clothes, the desire to become better.</li>
+                                            <li> <span>What you can use:</span> Court,Gym,Video practice, offline practice with trainer(4 times a week).</li>
+                                            <li> <span>About plan:</span> This plan is for those who wants to started play basketball and want to be stronger in it.</li>
+                                        </ul>
+                                        <a href="p404.html" class="site-btn sb-gradient">Get started</a>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="price-item pro">
+                                        <div class="price-top">
+                                            <h4>Pro</h4>
+                                        </div>
+                                        <div class="price-sec">
+                                            <h3>100$</h3>
+                                            <p>Per month</p>
+                                        </div>
+                                        <ul>
+                                            <li> <span>What you need:</span> The desire to be the best.</li>
+                                            <li> <span>What you can use:</span> Court,Gym,Video practice, offline practice with trainer(6 times a week).</li>
+                                            <li> <span>About plan:</span> In this plan you will enter the basketball team and you'll play with universities,other teams. You will play in tournaments and one time you will be picked in NBA</li>
+                                        </ul>
+                                        <a href="p404.html" class="site-btn sb-gradient">Get started</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="faq-list">
-                            <ul>
-                                <li>
-                                    <i href="" class="fas fa-align-justify icon-help"></i>
-                                    <a href="#faq-list-1" data-toggle="collapse" class="collapsed">What is Basketball?
-                        <i class="fas fa-chevron-down icon-show"></i>
-                        <i class="fas fa-chevron-up icon-close"></i>
-                    </a>
-                                    <div class="collapse show" id="faq-list-1" data-parent=".faq-list">
-                                        <p>Basketball is a game played between two teams of five players each on a rectangular court, usually indoors. Each team tries to score by tossing the ball through the opponent's goal, an elevated horizontal hoop and net called a basket.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i href="" class="fas fa-align-justify icon-help"></i>
-                                    <a href="#faq-list-2" data-toggle="collapse" class="collapsed">What equipment do you need for Basketball?
-                        <i class="fas fa-chevron-down icon-show"></i>
-                        <i class="fas fa-chevron-up icon-close"></i>
-                    </a>
-                                    <div class="collapse show" id="faq-list-2" data-parent=".faq-list">
-                                        <p>Basketball is a simple game, it doesn't require any equipment other than a hoop, a ball and a flat court. Even two players can play and have fun with basketball.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i href="" class="fas fa-align-justify icon-help"></i>
-                                    <a href="#faq-list-3" data-toggle="collapse" class="collapsed">What should you wear to play Basketball?
-                        <i class="fas fa-chevron-down icon-show"></i>
-                        <i class="fas fa-chevron-up icon-close"></i>
-                    </a>
-                                    <div class="collapse show" id="faq-list-3" data-parent=".faq-list">
-                                        <p>You'll need warmup suits and jackets for pre-game, and comfortable basketball shirts, T-shirts and practice jerseys, and it's always a good idea to keep a basic fleece hoodie in your locker. Fortify yourself on the court with compression layers — like shorts and tanks or shooter sleeves and leg sleeves.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i href="" class="fas fa-align-justify icon-help"></i>
-                                    <a href="#faq-list-4" data-toggle="collapse" class="collapsed">How do I get the practice videos than I bought?
-                        <i class="fas fa-chevron-down icon-show"></i>
-                        <i class="fas fa-chevron-up icon-close"></i>
-                    </a>
-                                    <div class="collapse show" id="faq-list-4" data-parent=".faq-list">
-                                        <p>After you have registered for a practice, you can reach it via the link to your account above.</p>
-                                    </div>
-                                </li>
-                            </ul>
+                    </section>
+                    <hr>
+                    <section class="gallery">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center pt-5">
+                                    <h1 class="text-dark text-uppercase">
+                                        Our Gallery
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row mb-4 first-row align-items-end">
+                                <div class="col-lg-3">
+                                    <a href="https://images.pexels.com/photos/258004/pexels-photo-258004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" data-lightbox="basketball" data-title="image-title">
+                                        <img src="https://images.pexels.com/photos/258004/pexels-photo-258004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-thumbnail gallery"></a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <a href="https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
+                                        <img src="https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery"></a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <a href="https://images.pexels.com/photos/2304351/pexels-photo-2304351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
+                                        <img src="https://images.pexels.com/photos/2304351/pexels-photo-2304351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery"></a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <a href="https://images.pexels.com/photos/3764158/pexels-photo-3764158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
+                                        <img src="https://images.pexels.com/photos/3764158/pexels-photo-3764158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery"></a>
+                                </div>
+                            </div>
+                            <div class="row mb-4 second-row align-items-end">
+                                <div class="col-lg-3">
+                                    <a href="https://cdn.pixabay.com/photo/2018/04/05/09/03/ball-3292243_960_720.jpg" data-lightbox="basketball" data-title="image-title">
+                                        <img src="https://cdn.pixabay.com/photo/2018/04/05/09/03/ball-3292243_960_720.jpg" class="img-thumbnail gallery" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <a href="https://cdn.pixabay.com/photo/2016/11/29/03/01/backboard-1866968_960_720.jpg" data-lightbox="basketball" data-title="image-title">
+                                        <img src="https://cdn.pixabay.com/photo/2016/11/29/03/01/backboard-1866968_960_720.jpg" class="img-thumbnail gallery" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <a href="https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
+                                        <img src="https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <a href="https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" data-lightbox="basketball" data-title="image-title">
+                                        <img src="https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-thumbnail gallery" alt="">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                    <hr>
+                    <section class="faq section-bg pt-5" id="faq">
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>F.A.Q</h2>
+                                <p>You can get answers to frequently asked questions here</p>
+                            </div>
+                            <div class="faq-list">
+                                <ul>
+                                    <li>
+                                        <i href="" class="fas fa-align-justify icon-help"></i>
+                                        <a href="#faq-list-1" data-toggle="collapse" class="collapsed">What is Basketball?
+                            <i class="fas fa-chevron-down icon-show"></i>
+                            <i class="fas fa-chevron-up icon-close"></i>
+                        </a>
+                                        <div class="collapse show" id="faq-list-1" data-parent=".faq-list">
+                                            <p>Basketball is a game played between two teams of five players each on a rectangular court, usually indoors. Each team tries to score by tossing the ball through the opponent's goal, an elevated horizontal hoop and net called a basket.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i href="" class="fas fa-align-justify icon-help"></i>
+                                        <a href="#faq-list-2" data-toggle="collapse" class="collapsed">What equipment do you need for Basketball?
+                            <i class="fas fa-chevron-down icon-show"></i>
+                            <i class="fas fa-chevron-up icon-close"></i>
+                        </a>
+                                        <div class="collapse show" id="faq-list-2" data-parent=".faq-list">
+                                            <p>Basketball is a simple game, it doesn't require any equipment other than a hoop, a ball and a flat court. Even two players can play and have fun with basketball.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i href="" class="fas fa-align-justify icon-help"></i>
+                                        <a href="#faq-list-3" data-toggle="collapse" class="collapsed">What should you wear to play Basketball?
+                            <i class="fas fa-chevron-down icon-show"></i>
+                            <i class="fas fa-chevron-up icon-close"></i>
+                        </a>
+                                        <div class="collapse show" id="faq-list-3" data-parent=".faq-list">
+                                            <p>You'll need warmup suits and jackets for pre-game, and comfortable basketball shirts, T-shirts and practice jerseys, and it's always a good idea to keep a basic fleece hoodie in your locker. Fortify yourself on the court with compression layers — like shorts and tanks or shooter sleeves and leg sleeves.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i href="" class="fas fa-align-justify icon-help"></i>
+                                        <a href="#faq-list-4" data-toggle="collapse" class="collapsed">How do I get the practice videos than I bought?
+                            <i class="fas fa-chevron-down icon-show"></i>
+                            <i class="fas fa-chevron-up icon-close"></i>
+                        </a>
+                                        <div class="collapse show" id="faq-list-4" data-parent=".faq-list">
+                                            <p>After you have registered for a practice, you can reach it via the link to your account above.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+    {% else %}
+        <p>Login <a href="/login">Here</a></p>
+    {% endif %}
                 <hr>
                 <footer>
                     <section class="contact mt-5">
