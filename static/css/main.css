@@ -481,7 +481,7 @@ footer .sub-footer p{
 .button {
     background-color: #f76666;
     border: none;
-    color: #f76666;
+    color: white;
     padding: 20px 40px;
     text-align: center;
     text-decoration: none;
@@ -496,7 +496,7 @@ footer .sub-footer p{
 .btn{
     font-weight: 700;
     background: #f76666;
-    color: #f76666;
+    color: white;
     padding: 0 10px;
     text-transform: uppercase;
     cursor: pointer;
