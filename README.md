@@ -6,7 +6,7 @@
 
 <h4>Here is the project named "SneakerLab". It is our project for INF 232 course in SDU. Nowadays in world is going a big hype around sneakers, so we had idea to do website, what sells Sneakers.</h4>
 
-
+![photo](https://sneakernews.com/wp-content/uploads/2018/11/holiday-shopping-group-header.jpg)
 
 # What did we use?
 
@@ -85,3 +85,5 @@ To compete and destroy the monarchy of CLUB100, Firestation999. And help to stor
 
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=With+love,+KNATZ+❤)](https://git.io/typing-svg)
+
+![gif](https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c2110470530403.5ba6879e0a3d4.gif)
