@@ -13,3 +13,11 @@ Back-end developing was with Python Django.
 # Mentor
 
  [Bissenbay Dauletbayev](https://github.com/bissenbay "Bissenbay Dauletbayev")
+ 
+# KNATZ Members
+
+[Ersultan Kanapiya](https://github.com/bissenbay "The Beast")
+[Yernur Zhakulla](https://github.com/bissenbay "The Shark")
+[Bakdaulet Nurmukhambet](https://github.com/bissenbay "The Fox")
+[Aida Adamova](https://github.com/bissenbay "The Astronaut")
+[Shyngys Toqtamys](https://github.com/bissenbay "The Guy")
