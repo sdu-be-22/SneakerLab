@@ -82,4 +82,4 @@ To compete and destroy the monarchy of CLUB100, Firestation999. And help to stor
 
 
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=With+love,+KNATZ)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=With+love,+KNATZ+❤)](https://git.io/typing-svg)
