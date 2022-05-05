@@ -26,31 +26,51 @@ Back-end developing was with Python Django.
 
 [Shyngys Toqtamys](https://github.com/Shynggyst "The Guy") - 200103015
 
-#Goal of our project
+# Goal of our project
 
 To compete and destroy the monarchy of CLUB100, Firestation999. And help to stores without WebSite.
 
-#Project Structure
+# Project Structure
 
-•Front-end 
+•Front-end
+
  •Main page
+ 
  •Catalog
+ 
  •Contact
+ 
  •Sign up
+ 
  •Cart
+ 
  •Checkout & Make a Payment 
  
+ 
+ 
 •Back-end
+
  •Contact us
+ 
   This function helps us to take a feedback from clients. What do we need to do? Which troubles do we have on website?
+
  •Search filter
+ 
   Search helps to clients to find wishful sneakers faster
+  
  •Cart
+ 
   Cart helps to group sneakers, that client wants to buy and pay to all of them, not one by one.
+  
  •Pagination
+ 
   One of the written functions, that helps website be neat.
+  
  •Create an account
+ 
   Helps to have an account on our site
+  
  •Checkout and Make a payment
+ 
   This function helps to check all of items, that client has added to cart and make a clear order
  
