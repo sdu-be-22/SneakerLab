@@ -1,6 +1,8 @@
 # SneakerLab - find what you want!
 
-Hi from KNATZ!
+<h1 align="center">Hi there, We're <a href="https://daniilshat.ru/" target="_blank">KNATZ</a> 
+<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
+<h3 align="center">Information systems students, SDU, Kazakhstan 🇷🇺</h3>
 
 Here is the project named "SneakerLab". It is our project for INF 232 course in SDU. Nowadays in world is going a big hype around sneakers, so we had idea to do website,
 what sells Sneakers.
