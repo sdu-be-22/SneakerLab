@@ -1,6 +1,6 @@
 # SneakerLab 
 
-<h1 align="center" >Hi there, We're <h1 style="color: red" >KNATZ</h1> 
+<h1 align="center" >Hi there, We're KNATZ! 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Information systems students, SDU, Kazakhstan</h3>
 
