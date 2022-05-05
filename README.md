@@ -6,7 +6,7 @@
 
 <h4>Here is the project named "SneakerLab". It is our project for INF 232 course in SDU. Nowadays in world is going a big hype around sneakers, so we had idea to do website, what sells Sneakers.</h4>
 
-[![Readme Quotes](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)](https://github.com/piyushsuthar/github-readme-quotes)
+
 
 # What did we use?
 
