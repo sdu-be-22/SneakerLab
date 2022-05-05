@@ -34,43 +34,43 @@ To compete and destroy the monarchy of CLUB100, Firestation999. And help to stor
 
 **•Front-end**
 
- _•Main page
+ _•Main page_
  
- _•Catalog
+ _•Catalog_
  
- _•Contact
+ _•Contact_
  
- _•Sign up
+ _•Sign up_
  
- _•Cart
+ _•Cart_
  
- _•Checkout & Make a Payment
+ _•Checkout & Make a Payment_
  
  ____________________________
  
-**•Back-end
+**•Back-end**
 
- _•Contact us
+ _•Contact us_
  
   This function helps us to take a feedback from clients. What do we need to do? Which troubles do we have on website?
 
- _•Search filter
+ _•Search filter_
  
   Search helps to clients to find wishful sneakers faster
   
- _•Cart
+ _•Cart_
  
   Cart helps to group sneakers, that client wants to buy and pay to all of them, not one by one.
   
- _•Pagination
+ _•Pagination_
  
   One of the written functions, that helps website be neat.
   
- _•Create an account
+ _•Create an account_
  
   Helps to have an account on our site
   
- _•Checkout and Make a payment
+ _•Checkout and Make a payment_
  
   This function helps to check all of items, that client has added to cart and make a clear order
  
