@@ -32,45 +32,45 @@ To compete and destroy the monarchy of CLUB100, Firestation999. And help to stor
 
 # Project Structure
 
-•Front-end
+**•Front-end**
 
- •Main page
+ _•Main page
  
- •Catalog
+ _•Catalog
  
- •Contact
+ _•Contact
  
- •Sign up
+ _•Sign up
  
- •Cart
+ _•Cart
  
- •Checkout & Make a Payment 
+ _•Checkout & Make a Payment
  
+ ____________________________
  
- 
-•Back-end
+**•Back-end
 
- •Contact us
+ _•Contact us
  
   This function helps us to take a feedback from clients. What do we need to do? Which troubles do we have on website?
 
- •Search filter
+ _•Search filter
  
   Search helps to clients to find wishful sneakers faster
   
- •Cart
+ _•Cart
  
   Cart helps to group sneakers, that client wants to buy and pay to all of them, not one by one.
   
- •Pagination
+ _•Pagination
  
   One of the written functions, that helps website be neat.
   
- •Create an account
+ _•Create an account
  
   Helps to have an account on our site
   
- •Checkout and Make a payment
+ _•Checkout and Make a payment
  
   This function helps to check all of items, that client has added to cart and make a clear order
  
