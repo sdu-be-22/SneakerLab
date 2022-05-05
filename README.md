@@ -79,3 +79,7 @@ To compete and destroy the monarchy of CLUB100, Firestation999. And help to stor
  
   This function helps to check all of items, that client has added to cart and make a clear order
  </h4>
+
+
+
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Computer+science+student)](https://git.io/typing-svg)
