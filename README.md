@@ -1,6 +1,6 @@
 # SneakerLab 
 
-<h1 align="center">Hi there, We're <a href="https://daniilshat.ru/" target="_blank">KNATZ</a> 
+<h1 align="center" >Hi there, We're <a href="" target="_blank" style="color: red" >KNATZ</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Information systems students, SDU, Kazakhstan</h3>
 
