@@ -12,4 +12,4 @@ Back-end developing was with Python Django.
 
 # Mentor
 
- ![Bissenbay Dauletbayev](https://github.com/bissenbay "Bissenbay Dauletbayev")
+ [Bissenbay Dauletbayev](https://github.com/bissenbay "Bissenbay Dauletbayev")
