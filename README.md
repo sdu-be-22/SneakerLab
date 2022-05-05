@@ -1,11 +1,10 @@
-# SneakerLab - find what you want!
+# SneakerLab 
 
 <h1 align="center">Hi there, We're <a href="https://daniilshat.ru/" target="_blank">KNATZ</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h3 align="center">Information systems students, SDU, Kazakhstan 🇷🇺</h3>
+<h3 align="center">Information systems students, SDU, Kazakhstan🇺</h3>
 
-Here is the project named "SneakerLab". It is our project for INF 232 course in SDU. Nowadays in world is going a big hype around sneakers, so we had idea to do website,
-what sells Sneakers.
+<h4>>Here is the project named "SneakerLab". It is our project for INF 232 course in SDU. Nowadays in world is going a big hype around sneakers, so we had idea to do website, what sells Sneakers.</h4>
 
 # What did we use?
 
@@ -34,8 +33,9 @@ To compete and destroy the monarchy of CLUB100, Firestation999. And help to stor
 
 # Project Structure
 
-**•Front-end**
+<h3>**•Front-end**</h3>
 
+ <h4>
  _•Main page_
  
  _•Catalog_
@@ -47,11 +47,12 @@ To compete and destroy the monarchy of CLUB100, Firestation999. And help to stor
  _•Cart_
  
  _•Checkout & Make a Payment_
+  </h4>
  
  ____________________________
  
-**•Back-end**
-
+<h3>**•Back-end**</h3>
+<h4>
  _•Contact us_
  
   This function helps us to take a feedback from clients. What do we need to do? Which troubles do we have on website?
@@ -75,4 +76,4 @@ To compete and destroy the monarchy of CLUB100, Firestation999. And help to stor
  _•Checkout and Make a payment_
  
   This function helps to check all of items, that client has added to cart and make a clear order
- 
+ </h4>
