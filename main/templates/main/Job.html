@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% load static %}
 <head>
-    <title>Contact Us</title>
+    <title>Send Resume</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -19,7 +19,6 @@
                 var cookies = document.cookie.split(';');
                 for(var i=0; i<cookies.length; i++){
                     var cookie = cookies[i].trim();
-                    //Does this cookie string begin with the name we want?
                     if(cookie.substring(0,name.length+1) === (name + '=')){
                         cookieValue = decodeURIComponent(cookie.substring(name.length+1));
                         break;
@@ -70,13 +69,23 @@
         </div>
     </nav>
     <div>  
-        <hr noshade size="20">     
+        <hr noshade size="20">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show w-25 mx-auto" role="alert">
+                    {{  message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="false">&times;</span></button>
+                </div>
+            {% endfor %}            
+        {% endif %}
+        
+        
+        
         <main>
-        <h2 class="h2">CONTACT US</h2>
-        <form class="form" method="post">
+        <h2 class="h2">Personal Information</h2>
+        <form class="form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-
-            {{ form|crispy }}            
+            {{ form|crispy }}
             <input type="submit" value="Submit" class="button-submit">
             <div class="ease"></div>
         </form>

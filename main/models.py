@@ -2,6 +2,7 @@ import email
 from operator import mod
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import EmailField
 
 # Create your models here.
 
@@ -88,7 +89,32 @@ class ShippingAddress(models.Model):
     address = models.CharField(max_length=200, null=True)
     city = models.CharField(max_length=200, null=True)
     zipcode = models.CharField(max_length=200, null=True)
-    date_added = models.DateTimeField(auto_now_add=True)
+    
     
     def __str__(self):
         return str(self.city) + " " + str(self.address)
+
+
+class JobVacancies(models.Model):
+    name = models.CharField(max_length=255)
+    surname = models.CharField(max_length=255)
+    email = models.EmailField()
+    age = models.IntegerField()    
+    cat = models.ForeignKey('JobCategory', on_delete=models.PROTECT, null=True)
+    stage = models.ForeignKey('ExperienceCategory', on_delete=models.PROTECT, null=True)
+    content = models.TextField(blank=True)
+    photo = models.ImageField(upload_to="static/vacancy", null=True)
+
+
+class JobCategory(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.name
+
+
+class ExperienceCategory(models.Model):
+    range = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.range

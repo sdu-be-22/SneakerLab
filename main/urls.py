@@ -12,4 +12,5 @@ urlpatterns = [
     path('searchbymodel/', views.searchbymodel, name='searchbymodel'),
     path('searchbybrand/', views.searchbybrand, name='searchbybrand'),
     path('searchbycategory/', views.searchbycategory, name='searchbycategory'),
+    path('jobvacancy/', views.jobvacancy, name='jobvacancy'),
 ]

@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from main.forms import *
 from .models import *
 from django.http import JsonResponse
 import json
@@ -68,18 +70,14 @@ def checkout(request):
 
 def contact(request):
     if request.method=="POST":
-        contact=Contact()
-        name=request.POST.get('name')
-        email=request.POST.get('email')
-        subject=request.POST.get('subject')
-        contact.name=name
-        contact.email=email
-        contact.subject=subject
-        contact.save()
-        messages.success(request, ('Message sent successfully!'))
-        return render(request, 'main/Contact.html') 
-    context={}
-    return render(request, 'main/Contact.html', context)
+        form = ContactUsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = ContactUsForm()
+        context={'form':form}
+        return render(request, 'main/Contact.html', context)
 
 
 def updateItem(request):
@@ -216,3 +214,15 @@ def searchbycategory(request):
 
     else:
         return render(request, 'main/search.html', {'products':products, 'cartItems':cartItems,'searched':searched , 'sneakers':sneakers, 'sneakerss':sneakerss})
+
+
+
+def jobvacancy(request):
+    if request.method == 'POST':
+        form = VacancyForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = VacancyForm()
+    return render(request, 'main/Job.html', {'form': form})

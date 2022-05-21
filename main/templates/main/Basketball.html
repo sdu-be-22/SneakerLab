@@ -47,7 +47,7 @@
             </div>
         </div>
     </section>
-    {% if user.is_authenticated %}
+    
         <nav class="navbar navbar-expand-lg bg-color" id="myNavbar">
             <div class="container">
                 <a href="{% url 'home' %}" class="navbar-brand">
@@ -168,10 +168,10 @@
                                         </div>
                                     </div>
                                     <a href="explore.html" class="site-btn sb-gradient mt-3" style="text-decoration: none">Explore More</a>
-            </div>
-            </div>
-        </div>
-        </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
         <hr>
         <section class="services section-bg pt-5">
         <div class="container">
@@ -429,9 +429,61 @@
                             </div>
                         </div>
                     </section>
-    {% else %}
-        <p>Login <a href="/login">Here</a></p>
-    {% endif %}
+
+                    <section class="about-section">
+                        <div class="container">
+                            <div class="section-title text-center">
+                                <h2>Welcome to Basketball</h2>
+                                <p>
+                                    Connect and train with 300+ expert trainers of basketball.
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="about-img">
+                                        <img src="https://images.unsplash.com/photo-1587166088004-bbd20854280f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="img-fluid" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="about-item">
+                                        <div class="about-icon">
+                                            <i class="fab fa-diaspora fa-2x"></i>
+                                        </div>
+                                        <div class="about-text">
+                                            <h4>We are looking for you!</h4>
+                                            <p>
+                                                Regular basketball practice strengthens the cardiovascular and respiratory systems, significantly improves the work of the endocrine glands.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="about-item">
+                                        <div class="about-icon">
+                                            <i class="fab fa-diaspora fa-2x"></i>
+                                        </div>
+                                        <div class="about-text">
+                                            <h4>How to play Basketball?</h4>
+                                            <p>
+                                                Give it a try and It will make you more resilient and stronger.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="about-item">
+                                        <div class="about-icon">
+                                            <i class="fab fa-diaspora fa-2x"></i>
+                                        </div>
+                                        <div class="about-text">
+                                            <h4>I can't jump</h4>
+                                            <p>
+                                                Listen to your body, don't force yourself and stay within your limits.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'jobvacancy' %}" class="site-btn sb-gradient mt-3" style="text-decoration: none">Send а Resume</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+    
                 <hr>
                 <footer>
                     <section class="contact mt-5">
