@@ -1,4 +1,6 @@
 from django.urls import path
+
+from register.forms import RegisterForm
 from . import views
 
 urlpatterns = [
@@ -13,4 +15,7 @@ urlpatterns = [
     path('searchbybrand/', views.searchbybrand, name='searchbybrand'),
     path('searchbycategory/', views.searchbycategory, name='searchbycategory'),
     path('jobvacancy/', views.jobvacancy, name='jobvacancy'),
+    path('register/', views.RegisterUser.as_view(), name='register'),
+    path('login/', views.LoginUser.as_view(), name='login'),
+    path('logout/', views.logout_user, name='logout'),
 ]

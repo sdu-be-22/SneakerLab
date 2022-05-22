@@ -1,4 +1,6 @@
+from re import template
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 
 from main.forms import *
 from .models import *
@@ -7,6 +9,10 @@ import json
 from django.contrib import messages
 import datetime
 from django.core.paginator import Paginator
+from django.contrib.auth.forms import AuthenticationForm
+from django.views.generic import CreateView
+from django.contrib.auth.views import LoginView
+from django.contrib.auth import logout
 
 # Create your views here.
 
@@ -226,3 +232,21 @@ def jobvacancy(request):
     else:
         form = VacancyForm()
     return render(request, 'main/Job.html', {'form': form})
+
+
+
+class RegisterUser(CreateView):
+    form_class = RegisterForm 
+    template_name = 'main/register.html'
+    success_url = reverse_lazy('login')
+
+
+class LoginUser(LoginView):
+    form_class = AuthenticationForm
+    template_name = 'main/login.html'
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
+

@@ -100,10 +100,13 @@ class JobVacancies(models.Model):
     surname = models.CharField(max_length=255)
     email = models.EmailField()
     age = models.IntegerField()    
-    cat = models.ForeignKey('JobCategory', on_delete=models.PROTECT, null=True)
+    category = models.ForeignKey('JobCategory', on_delete=models.PROTECT, null=True)
     stage = models.ForeignKey('ExperienceCategory', on_delete=models.PROTECT, null=True)
     content = models.TextField(blank=True)
     photo = models.ImageField(upload_to="static/vacancy", null=True)
+
+    def __str__(self):
+        return str(self.name) + " " + str(self.surname) + " '" + str(self.category) + "'"
 
 
 class JobCategory(models.Model):
